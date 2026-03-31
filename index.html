@@ -2048,8 +2048,8 @@
         }
 
         .final-cta-buttons {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 12px;
         }
 
@@ -2058,17 +2058,21 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            padding: 12px 20px;
-            border-radius: 10px;
+            padding: 14px 20px;
+            border-radius: var(--radius);
             color: #fff;
-            font-weight: 700;
+            font-size: 15px;
+            font-weight: 600;
             text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255,255,255,0.16);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+            box-shadow: var(--shadow), 0 0 0 0 rgba(99,102,241,0.35);
         }
 
         .btn-social:hover {
             transform: translateY(-2px);
+            border-color: rgba(129,140,248,0.55);
+            box-shadow: var(--shadow-lg), 0 0 0 3px rgba(99,102,241,0.2);
         }
 
         .btn-social svg {
@@ -2078,11 +2082,11 @@
         }
 
         .btn-whatsapp {
-            background: #128C7E;
+            background: linear-gradient(135deg, #0ea271 0%, #128C7E 100%);
         }
 
         .btn-telegram {
-            background: #6366f1;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
         }
 
         .btn-email {
@@ -2173,8 +2177,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .btn-social {
-                width: 100%;
+            .final-cta-buttons {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -2478,27 +2482,17 @@
                                     <input type="text" id="hero-name" name="name" placeholder="Jane Cooper" autocomplete="name" required>
                                 </div>
                                 <div class="hero-form-group">
-                                    <label for="hero-email">Work email</label>
+                                    <label for="hero-email">Email</label>
                                     <input type="email" id="hero-email" name="email" placeholder="you@company.com" autocomplete="email" required>
                                 </div>
                             </div>
                             <div class="hero-form-group">
-                                <label for="hero-company">Company</label>
-                                <input type="text" id="hero-company" name="company" placeholder="Company or project name" autocomplete="organization">
+                                <label for="hero-phone">Phone number</label>
+                                <input type="tel" id="hero-phone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel">
                             </div>
                             <div class="hero-form-group">
-                                <label for="hero-volume">Monthly email volume</label>
-                                <select id="hero-volume" name="volume">
-                                    <option value="" selected>Select a range</option>
-                                    <option value="under-50k">Under 50k</option>
-                                    <option value="50k-250k">50k – 250k</option>
-                                    <option value="250k-1m">250k – 1M</option>
-                                    <option value="1m-plus">1M+</option>
-                                </select>
-                            </div>
-                            <div class="hero-form-group">
-                                <label for="hero-message">What do you need help with?</label>
-                                <textarea id="hero-message" name="message" placeholder="Brief context on your sending setup, domains, and goals…"></textarea>
+                                <label for="hero-message">Message</label>
+                                <textarea id="hero-message" name="message" placeholder="Brief context on what you need help with…"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Request inbox setup</button>
                             <p class="hero-form-footnote">We typically reply within one business day.</p>
@@ -3176,8 +3170,8 @@
                             </div>
                         </div>
                         <div class="final-cta-form-group">
-                            <label for="cta-company">Company</label>
-                            <input type="text" id="cta-company" name="company" placeholder="Company name" autocomplete="organization">
+                            <label for="cta-phone">Phone number</label>
+                            <input type="tel" id="cta-phone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel">
                         </div>
                         <div class="final-cta-form-group">
                             <label for="cta-message">Message</label>
