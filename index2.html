@@ -1,0 +1,3319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inbox Setup | Custom Email Solutions</title>
+    <meta name="description" content="Inbox Emails to Generate Leads & Sales. Forget about landing in spam, blacklisting, and account suspensions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --primary-dark: #4f46e5;
+            --accent: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-red: #ef4444;
+            --bg-dark: #0f0f1a;
+            --bg-dark-secondary: #1a1a2e;
+            --bg-light: #ffffff;
+            --bg-gray: #f8fafc;
+            --bg-gray-dark: #f1f5f9;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --text-light: #94a3b8;
+            --text-white: #ffffff;
+            --border: #e2e8f0;
+            --border-dark: rgba(255,255,255,0.1);
+            --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
+            --shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1);
+            --card-bg: #ffffff;
+            --card-border: #e2e8f0;
+            --card-shadow: 0 12px 28px -22px rgba(15,23,42,0.45);
+            --card-radius: 16px;
+            --radius: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --section-pad: clamp(72px, 8vw, 96px);
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(circle at 10% 10%, rgba(99,102,241,0.10), transparent 40%),
+                radial-gradient(circle at 85% 12%, rgba(16,185,129,0.08), transparent 45%),
+                radial-gradient(circle at 70% 70%, rgba(245,158,11,0.07), transparent 45%),
+                radial-gradient(circle at 15% 85%, rgba(99,102,241,0.08), transparent 40%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        section {
+            background: transparent;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--text-dark);
+        }
+
+        p { color: var(--text-muted); }
+
+        img { max-width: 100%; height: auto; display: block; }
+        a { color: inherit; text-decoration: none; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 50px; }
+        .container-narrow { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+        
+        section + section {
+            position: relative;
+        }
+        section + section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: min(900px, 85%);
+            height: 1px;
+            background: linear-gradient(90deg, rgba(99,102,241,0) 0%, rgba(99,102,241,0.25) 30%, rgba(16,185,129,0.25) 70%, rgba(99,102,241,0) 100%);
+            opacity: 0.6;
+        }
+
+        
+        .how-step-card,
+        .bonus-card,
+        .testimonial-card,
+        .pricing-card,
+        .pricing-intro-item,
+        .pricing-info-bar,
+        .audience-card,
+        .faq-item,
+        .stats-badge,
+        .value-list li {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--card-radius);
+            box-shadow: var(--card-shadow);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .how-step-card:hover,
+        .bonus-card:hover,
+        .testimonial-card:hover,
+        .pricing-card:hover,
+        .pricing-intro-item:hover,
+        .pricing-info-bar:hover,
+        .audience-card:hover,
+        .faq-item:hover,
+        .stats-badge:hover,
+        .value-list li:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 18px 36px -26px rgba(15,23,42,0.55);
+            border-color: rgba(99,102,241,0.35);
+        }
+
+        
+        .btn:hover { transform: translateY(-2px); }
+        .btn:active { transform: translateY(0); }
+
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 14px 28px;
+            font-size: 15px;
+            font-weight: 600;
+            border-radius: var(--radius);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            line-height: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            box-shadow: var(--shadow), 0 0 0 0 rgba(99,102,241,0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg), 0 0 0 4px rgba(99,102,241,0.2);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--text-dark);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-gray);
+            border-color: var(--primary-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: inherit;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .btn-ghost:hover { background: rgba(255,255,255,0.1); }
+
+        
+        
+        .hero .btn-ghost { color: rgba(255,255,255,0.92); border-color: rgba(255,255,255,0.28); }
+        .hero .btn-ghost:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.45); }
+
+        .hero {
+            min-height: 100vh;
+            background: var(--bg-dark);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse 80% 50% at 20% 40%, rgba(99,102,241,0.15) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 80% 60%, rgba(16,185,129,0.1) 0%, transparent 40%),
+                radial-gradient(ellipse 50% 30% at 50% 100%, rgba(245,158,11,0.08) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 56px 56px;
+            pointer-events: none;
+        }
+
+        .hero .container { position: relative; z-index: 2; max-width: 1500px; }
+
+        .hero-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(99,102,241,0.15);
+            border: 1px solid rgba(99,102,241,0.3);
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--primary-light);
+            margin-bottom: 24px;
+        }
+
+        .hero-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--text-white);
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 16px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 999px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .hero-feature svg {
+            width: 16px;
+            height: 16px;
+            color: var(--accent);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        
+        .hero-microcopy {
+            font-size: 13px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 24px;
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+        }
+
+        .hero-trust-avatars {
+            display: flex;
+        }
+
+        .hero-trust-avatars img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid var(--bg-dark);
+            margin-left: -8px;
+        }
+
+        .hero-trust-avatars img:first-child { margin-left: 0; }
+
+        .hero-visual { position: relative; }
+
+        .hero-dashboard {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-xl);
+            padding: 24px;
+            min-height: 600px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dashboard-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dashboard-dot.red { background: var(--accent-red); }
+        .dashboard-dot.yellow { background: var(--accent-orange); }
+        .dashboard-dot.green { background: var(--accent); }
+
+        .dashboard-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: var(--radius);
+            padding: 20px;
+        }
+
+        .stat-card-label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stat-card-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--text-white);
+        }
+
+        .stat-card-value.up { color: var(--accent); }
+
+        .stat-card-change {
+            font-size: 12px;
+            color: var(--accent);
+            margin-top: 4px;
+        }
+
+        .dashboard-chart {
+            flex: 1;
+            min-height: 120px;
+            background: linear-gradient(180deg, rgba(99,102,241,0.2) 0%, transparent 100%);
+            border-radius: var(--radius);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chart-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+            opacity: 0.6;
+            clip-path: polygon(0 100%, 0 60%, 20% 40%, 40% 50%, 60% 20%, 80% 30%, 100% 10%, 100% 100%);
+        }
+
+        
+        .logo-marquee {
+            position: relative;
+            padding: 56px 0;
+            background: #ffffff;
+            border-top: 1px solid rgba(99,102,241,0.12);
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .marquee-header {
+            text-align: center;
+            font-size: 12px;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            margin-bottom: 28px;
+        }
+
+        .marquee-track {
+            display: flex;
+            gap: 36px;
+            animation: marquee 26s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .marquee-item {
+            flex-shrink: 0;
+            font-size: 15px;
+            font-weight: 600;
+            color: #5b6b83;
+            background: rgba(255,255,255,0.8);
+            border: 1px solid rgba(15,23,42,0.08);
+            padding: 10px 18px;
+            border-radius: 999px;
+            box-shadow: 0 6px 18px rgba(15,23,42,0.05);
+            white-space: nowrap;
+        }
+
+        .logo-marquee::before,
+        .logo-marquee::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 140px;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .logo-marquee::before {
+            left: 0;
+            background: linear-gradient(90deg, #ffffff 0%, rgba(255,255,255,0) 100%);
+        }
+
+        .logo-marquee::after {
+            right: 0;
+            background: linear-gradient(270deg, #ffffff 0%, rgba(255,255,255,0) 100%);
+        }
+
+        
+        .dashboard-showcase {
+            padding: 80px 0;
+            background: var(--bg-light);
+            text-align: center;
+        }
+
+        .dashboard-showcase .showcase-wrap {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .dashboard-showcase .showcase-main {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        .dashboard-showcase .showcase-overlay {
+            position: absolute;
+            right: -40px;
+            bottom: -24px;
+            width: clamp(220px, 28vw, 420px);
+            height: auto;
+            box-shadow: none;
+        }
+
+        
+        .stats-section {
+            padding: 80px 0;
+            background: var(--bg-light);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stats-headline {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .stats-headline h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--text-dark);
+            text-align: center;
+        }
+
+        .stats-headline h2 strong { color: var(--primary); }
+
+        .stats-badges {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .stats-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 28px;
+            background: var(--bg-gray);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: var(--shadow-sm);
+        }
+
+        
+        .problem-section {
+            padding: var(--section-pad) 0;
+            background: var(--bg-dark);
+            position: relative;
+        
+            text-align: center;
+        }
+
+        
+        .problem-section .section-tag {
+            display: inline-flex;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+.problem-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 50% 30% at 50% 0%, rgba(239,68,68,0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .section-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(239,68,68,0.15);
+            border: 1px solid rgba(239,68,68,0.3);
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #f87171;
+            margin-bottom: 16px;
+        }
+
+        .problem-section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--text-white);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .problem-section > .container > p {
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .problem-slap-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            background: transparent;
+            border: none;
+            border-radius: var(--radius-xl);
+            text-align: center;
+        }
+
+        .problem-list {
+            list-style: none;
+            margin: 0 auto 24px;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .problem-list li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: rgba(239,68,68,0.1);
+            border: 1px solid rgba(239,68,68,0.2);
+            border-radius: 999px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #f87171;
+        }
+
+        .problem-flow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 18px;
+            border-radius: 999px;
+            background: rgba(249,115,22,0.15);
+            border: 1px solid rgba(249,115,22,0.3);
+            font-weight: 700;
+            color: #fbbf24;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .problem-truth {
+            font-size: 18px;
+            margin-bottom: 12px;
+            color: var(--text-white);
+            font-weight: 700;
+        }
+
+        .problem-cost {
+            color: rgba(255,255,255,0.5);
+            font-size: 15px;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .problem-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .problem-card:hover {
+            background: rgba(255,255,255,0.05);
+            border-color: rgba(239,68,68,0.3);
+            transform: translateY(-4px);
+        }
+
+        .problem-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(239,68,68,0.15);
+            border-radius: var(--radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .problem-icon svg {
+            width: 24px;
+            height: 24px;
+            color: #f87171;
+        }
+
+        .problem-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-white);
+            margin-bottom: 12px;
+        }
+
+        .problem-card p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+
+        
+        .features {
+            padding: var(--section-pad) 0;
+            background: #f8fafc;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .features .section-tag {
+            background: rgba(99,102,241,0.12);
+            border: 1px solid rgba(99,102,241,0.28);
+            color: var(--primary);
+        }
+
+        .features-images {
+            position: relative;
+            max-width: 1130px;
+            width: 100%;
+            height: 360px;
+            margin: 0 auto 48px;
+            transform: translateX(-18px);
+        }
+
+        .features-images img {
+            position: absolute;
+            max-width: none;
+            filter: drop-shadow(0 8px 24px rgba(0,0,0,0.08));
+        }
+
+        .how-img-platform { width: 520px; left: 0; top: 0; z-index: 1; }
+        .how-img-ai { width: 190px; left: 330px; top: 50px; z-index: 2; }
+        .how-img-infra { width: 320px; left: 500px; top: 22px; z-index: 1; }
+        .how-img-inbox { width: 360px; left: 770px; top: 46px; z-index: 1; }
+
+        .how-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            row-gap: 32px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 28px;
+        }
+
+        .how-step-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            box-shadow: var(--shadow-sm);
+            text-align: left;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .how-step-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .how-step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .how-step-card:hover::before {
+            opacity: 1;
+        }
+
+        .how-step-label {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: rgba(99,102,241,0.1);
+            color: var(--primary);
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .how-step-card h3 {
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: var(--text-dark);
+        }
+
+        .how-step-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 10px;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .how-step-card ul li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .how-step-card ul li::before {
+            content: "→";
+            color: var(--primary);
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 0;
+        }
+
+        .how-timeline {
+            display: grid;
+            gap: 20px;
+            justify-items: center;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+        }
+
+        .how-timeline div {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: white;
+            border-radius: 999px;
+            font-size: 14px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .how-proof {
+            text-align: center;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-size: 15px;
+        }
+
+        .how-closing {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+                .case-study-section {
+            padding: var(--section-pad) 0;
+            
+        }
+
+        .case-study-card {
+            background: linear-gradient(180deg, #f4f5ff 0%, #ffffff 45%, #f7f8ff 100%);
+            border: 1px solid #dde1f2;
+            border-radius: 18px;
+            box-shadow: 0 26px 70px -42px rgba(20, 30, 60, 0.45);
+            padding: clamp(28px, 4vw, 42px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-study-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 34%;
+            background: radial-gradient(circle at 30% 8%, rgba(99,102,241,0.12), transparent 60%),
+                        radial-gradient(circle at 85% 0%, rgba(99,102,241,0.12), transparent 55%),
+                        linear-gradient(180deg, rgba(235,238,251,0.9) 0%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
+        }
+
+        .case-header {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 40px;
+            gap: 28px;
+            align-items: start;
+            padding-bottom: 22px;
+            
+            
+            position: relative;
+            z-index: 1;
+            padding-right: 360px;
+        }
+
+        .case-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 18px;
+            border-radius: 999px;
+            background: linear-gradient(180deg, #8f98de 0%, #6f7fd0 100%);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 14px;
+            letter-spacing: 0.01em;
+        }
+
+        .case-title {
+            font-size: clamp(2rem, 3.4vw, 2.5rem);
+            font-weight: 800;
+            color: #1f2340;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .case-subtitle {
+            color: #707aa0;
+            font-size: 16.5px;
+            margin-bottom: 10px;
+        }
+
+        .case-body {
+            position: relative;
+            z-index: 1;
+        }
+
+        .case-col {
+            min-width: 0;
+        }
+
+        .case-columns {
+            --case-left-col: 30%;
+            --case-right-col: 70%;
+            display: grid;
+            grid-template-columns: var(--case-left-col) var(--case-right-col);
+            gap: 28px;
+        }
+
+        .case-col {
+            padding-right: 18px;
+        }
+
+        .case-columns .case-col:first-child {
+            border-right: 1px solid #e4e7f5;
+            padding-right: 24px;
+        }
+
+        .case-columns .case-col:last-child {
+            padding-right: 0;
+        }
+
+        .case-spacer {
+            height: 14px;
+        }
+
+        .case-block h4 {
+            font-size: 16px;
+            font-weight: 800;
+            color: #20243a;
+            margin-bottom: 10px;
+        }
+
+        .case-problem {
+            --problem-width: 40%;
+            max-width: var(--problem-width);
+        }
+
+        .case-problem-list {
+            list-style: disc;
+            padding-left: 18px;
+            margin: 0;
+            display: grid;
+            gap: 6px;
+        }
+
+        .case-problem-list li {
+            font-size: 14.5px;
+            color: #5b647a;
+            line-height: 1.5;
+        }
+
+        .case-block p {
+            font-size: 14.5px;
+            color: #5b647a;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        .case-block p + p {
+            margin-top: 6px;
+        }
+
+        .case-problem-note {
+            font-size: 14.5px;
+            color: #5b647a;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+
+        .case-list {
+            list-style: none;
+            margin-top: 10px;
+        }
+
+        .case-list li {
+            font-size: 14px;
+            color: #3c4257;
+            margin-bottom: 8px;
+            display: flex;
+            gap: 8px;
+        }
+
+        .case-list li::before {
+            content: "•";
+            color: #5b6bff;
+            font-weight: 700;
+        }
+
+        .case-quote {
+            margin-top: 18px;
+            background: #f5f6ff;
+            border: 1px solid #e3e6fb;
+            border-radius: 12px;
+            padding: 18px 24px;
+            color: #2b2f44;
+            position: relative;
+            box-shadow: 0 10px 30px -26px rgba(27, 33, 64, 0.4);
+            max-width: 96%;
+        }
+
+        .case-quote::before {
+            content: "\201C";
+            position: absolute;
+            top: 10px;
+            left: 16px;
+            font-size: 34px;
+            color: #a9b2cf;
+            line-height: 1;
+        }
+
+        .case-quote p {
+            font-size: 16px;
+            color: #2b2f44;
+            padding-left: 26px;
+            padding-right: 26px;
+        }
+
+        .case-quote strong {
+            font-weight: 800;
+            color: #1f2340;
+        }
+
+        .case-quote .case-client {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #66708a;
+            padding-left: 26px;
+            padding-right: 26px;
+        }
+
+        .case-side {
+            background: #ffffff;
+            border: 1px solid #e6e9f6;
+            border-radius: 16px;
+            padding: 20px 24px;
+            box-shadow: 0 22px 50px -36px rgba(27, 33, 64, 0.5);
+            position: absolute;
+            top: 30px;
+            right: 0;
+        }
+
+        .case-side h4 {
+            font-size: 15px;
+            font-weight: 800;
+            color: #20243a;
+            margin-bottom: 20px;
+        }
+
+        .case-side ul {
+            list-style: none;
+            margin-bottom: 12px;
+        }
+
+        .case-side li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: #3c4257;
+            margin-bottom: 12px;
+        }
+
+        .case-side .icon {
+            width: 20px;
+            height: 20px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .case-side .icon svg {
+            width: 20px;
+            height: 20px;
+            display: block;
+        }
+
+        .case-side .case-divider {
+            height: 1px;
+            background: #e6e9f6;
+            margin: 20px 0 14px;
+        }
+
+        .case-outcome li::before {
+            content: "✓";
+            color: #5aa86a;
+            font-weight: 800;
+        }
+
+        @media (max-width: 900px) {
+            .case-header {
+                grid-template-columns: 1fr;
+                padding-right: 0;
+            }
+
+            .case-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .case-columns .case-col:first-child {
+                border-right: 0;
+                padding-right: 0;
+                padding-bottom: 16px;
+                border-bottom: 1px solid #e4e7f5;
+            }
+        }\n.case-columns {
+                grid-template-columns: 1fr;
+            }
+        
+
+
+        .timeline-section {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .timeline-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .timeline {
+            display: flex;
+            gap: 24px;
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto 40px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 60px;
+            right: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+        }
+
+        .timeline-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+
+        .timeline-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 2px solid rgba(99,102,241,0.25);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            position: relative;
+            z-index: 1;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .timeline-step:hover .timeline-icon {
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(99,102,241,0.2);
+            transform: scale(1.05);
+        }
+
+        .timeline-duration {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(99,102,241,0.1);
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .timeline-step h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .timeline-step p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .timeline-disclaimer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        
+        .what-you-get {
+            padding: var(--section-pad) 0;
+            background: var(--bg-light);
+            text-align: center;
+        }
+
+        .what-you-get h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+        }
+
+        .value-list {
+            list-style: none;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            text-align: left;
+        }
+
+        .value-list li {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            background: var(--bg-gray);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 16px;
+            box-shadow: none;
+        }
+
+        .value-list li::before {
+            content: '✓';
+            width: 24px;
+            height: 24px;
+            background: rgba(99,102,241,0.12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .value-punch {
+            max-width: 700px;
+            margin: 16px auto 0;
+            padding: 0;
+            background: none;
+            border: none;
+            border-radius: 0;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        
+        .bonuses-section {
+            padding: var(--section-pad) 0;
+            background: var(--bg-gray);
+        }
+
+        .bonuses-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .bonuses-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .bonuses-header p {
+            color: var(--text-muted);
+            font-size: 18px;
+        }
+
+        .bonuses-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bonus-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .bonus-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+
+        .bonus-label {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(99,102,241,0.1);
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .bonus-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+
+        .bonus-list {
+            list-style: none;
+        }
+
+        .bonus-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .bonus-list li::before {
+            content: '•';
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        
+        .testimonial-section {
+            padding: var(--section-pad) 0;
+            background: var(--bg-light);
+        }
+
+        .testimonial-card-large {
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, rgba(99,102,241,0.05) 0%, rgba(16,185,129,0.05) 100%);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 48px;
+            position: relative;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 24px;
+        }
+
+        .testimonial-rating svg {
+            width: 20px;
+            height: 20px;
+            color: #f59e0b;
+            fill: currentColor;
+        }
+
+        .testimonial-text {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 32px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .testimonial-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .testimonial-info p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        
+        .comparison-section {
+            padding: var(--section-pad) 0;
+            background: var(--bg-light);
+        }
+
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .comparison-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: white;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px 24px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-table th {
+            background: #f8fafc;
+            color: var(--text-muted);
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .comparison-table th:last-child {
+            background: rgba(99,102,241,0.08);
+            color: var(--primary);
+        }
+
+        .comparison-table th:first-child,
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .check { color: var(--accent); font-size: 20px; font-weight: bold; }
+        .cross { color: var(--accent-red); font-size: 20px; font-weight: bold; }
+
+        .comparison-footer {
+            text-align: center;
+            margin-top: 32px;
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 18px;
+        }
+
+        
+        .pricing-section {
+            padding: var(--section-pad) 0;
+            background: var(--bg-gray);
+        }
+
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .pricing-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+
+        .pricing-intro {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+
+        .pricing-intro-item {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            text-align: center;
+        }
+
+        .pricing-intro-item h3 {
+            font-size: 56px;
+            font-weight: 200;
+            color: rgba(15,23,42,0.1);
+            margin-bottom: 16px;
+        }
+
+        .pricing-intro-item h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .pricing-intro-item p {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .pricing-guarantee {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            padding: 24px;
+            background: rgba(16,185,129,0.1);
+            border: 1px solid rgba(16,185,129,0.2);
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+
+        .pricing-guarantee h3 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .pricing-guarantee p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto 24px;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-4px);
+        }
+
+        .pricing-card.featured {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(99,102,241,0.1), var(--shadow-xl);
+            position: relative;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 6px 16px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .pricing-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .pricing-card .price {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin: 20px 0;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .pricing-card li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .pricing-card li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .pricing-info {
+            background: white;
+            border: 2px dashed var(--border);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 300px;
+        }
+
+        
+        .pricing-spacer { background: transparent; border: none; box-shadow: none; }
+        .pricing-info-bar {
+            margin-top: 0;
+            background: white;
+            border: 1px solid var(--border);
+            padding: 28px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            text-align: left;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+        .pricing-info-bar a { color: var(--primary-dark); font-weight: 700; }
+.pricing-info p {
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+
+        .pricing-info strong {
+            color: var(--text-dark);
+        }
+
+        .pricing-info a {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .pricing-urgency {
+            max-width: 900px;
+            margin: 40px auto 0;
+            padding: 24px;
+            background: rgba(245,158,11,0.1);
+            border: 1px solid rgba(245,158,11,0.2);
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+
+        .pricing-urgency h3 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #d97706;
+        }
+
+        .pricing-urgency p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        
+        .real-cost {
+            padding: var(--section-pad) 0;
+            background-color: #0f0f1a;
+            background-image:
+                linear-gradient(180deg, rgba(10, 12, 24, 0.65), rgba(10, 12, 24, 0.65)),
+                url("https://inboxsetups.com/wp-content/uploads/2026/02/32816.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            text-align: center;
+        }
+
+        .real-cost h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .real-cost p {
+            color: rgba(255,255,255,0.7);
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 16px;
+            line-height: 1.7;
+        }
+
+        .real-cost strong {
+            color: white;
+        }
+
+        
+        .testimonials-grid-section {
+            padding: var(--section-pad) 0;
+            background: var(--bg-gray);
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .testimonials-header .stars {
+            color: #14a800;
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .testimonials-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .testimonials-header p {
+            color: var(--text-muted);
+        }
+
+        .testimonials-header p span {
+            color: #14a800;
+            font-weight: 700;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            background: white;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .testimonial-result {
+            display: inline-block;
+            padding: 4px 10px;
+            background: rgba(99,102,241,0.1);
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .testimonial-card-header h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .testimonial-card-header .rating {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .testimonial-card-header .rating .stars {
+            color: #14a800;
+        }
+
+        .testimonial-quote {
+            font-size: 13px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-person {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .testimonial-card-footer {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+        }
+
+        
+        .final-cta {
+            padding: var(--section-pad) 0;
+            background-color: #0f0f1a;
+            background-image:
+                linear-gradient(180deg, rgba(10, 12, 24, 0.7), rgba(10, 12, 24, 0.7)),
+                url("https://inboxsetups.com/wp-content/uploads/2026/02/how-to-send-a-mass-email-individually-yesware.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(99,102,241,0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1180px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+            align-items: stretch;
+            text-align: left;
+        }
+
+        .final-cta-left,
+        .final-cta-form-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: var(--radius-xl);
+            padding: 28px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 36px -30px rgba(0, 0, 0, 0.55);
+        }
+
+        .final-cta h2 {
+            font-size: clamp(2rem, 4.4vw, 3.2rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 14px;
+            line-height: 1.15;
+        }
+
+        .final-cta-lead {
+            font-size: 17px;
+            color: rgba(255,255,255,0.72);
+            margin-bottom: 24px;
+        }
+
+        .final-cta-buttons {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .btn-social {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 20px;
+            border-radius: var(--radius);
+            color: #fff;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.16);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
+            box-shadow: var(--shadow), 0 0 0 0 rgba(99,102,241,0.35);
+        }
+
+        .btn-social:hover {
+            transform: translateY(-2px);
+            border-color: rgba(129,140,248,0.55);
+            box-shadow: var(--shadow-lg), 0 0 0 3px rgba(99,102,241,0.2);
+        }
+
+        .btn-social svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #0ea271 0%, #128C7E 100%);
+        }
+
+        .btn-telegram {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        }
+
+        .btn-email {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+        }
+
+        .final-cta-form-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .final-cta-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .final-cta-form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .final-cta-form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .final-cta-form-group label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.52);
+        }
+
+        .final-cta-form input,
+        .final-cta-form textarea {
+            width: 100%;
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: var(--radius);
+            background: rgba(255,255,255,0.06);
+            color: #fff;
+            font: inherit;
+            padding: 11px 13px;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .final-cta-form textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .final-cta-form input::placeholder,
+        .final-cta-form textarea::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .final-cta-form input:focus,
+        .final-cta-form textarea:focus {
+            border-color: rgba(129,140,248,0.75);
+            box-shadow: 0 0 0 3px rgba(99,102,241,0.25);
+        }
+
+        .final-cta-form .btn-primary {
+            width: 100%;
+            margin-top: 4px;
+        }
+
+        .final-cta-form-note {
+            font-size: 12px;
+            color: rgba(255,255,255,0.46);
+            margin-top: 2px;
+        }
+
+        @media (max-width: 1024px) {
+            .final-cta-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .final-cta-form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .final-cta-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        
+        .audience-section {
+            padding: 80px 0;
+            background: var(--bg-gray);
+        }
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .audience-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .audience-card h2 {
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .audience-card:first-child h2 {
+            color: var(--accent-red);
+        }
+
+        .audience-card:last-child h2 {
+            color: var(--accent);
+        }
+
+        .audience-card ul {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .audience-card li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        
+        .faq-section {
+            padding: var(--section-pad) 0;
+            background: var(--bg-light);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-gray);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover { border-color: var(--primary); }
+
+        .faq-item.active {
+            background: white;
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 20px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            text-align: left;
+        }
+
+        .faq-question svg {
+            width: 20px;
+            height: 20px;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-item.active .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 24px 20px;
+            font-size: 15px;
+            color: var(--text-muted);
+            display: none;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        
+        @media (max-width: 1024px) {
+            .hero-layout { grid-template-columns: 1fr; text-align: center; }
+            .hero-features { justify-content: center; }
+            .hero-cta { justify-content: center; }
+            .hero-trust { justify-content: center; }
+
+            .how-steps,
+            .bonuses-grid,
+            .pricing-grid,
+            .testimonials-grid,
+            .audience-grid,
+            .problem-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .features-images { display: none; }
+
+            .timeline { flex-direction: column; }
+            .timeline::before { display: none; }
+
+            .pricing-intro { grid-template-columns: 1fr; }
+
+            .case-header {
+                grid-template-columns: 1fr;
+                padding-right: 0;
+            }
+
+            .case-side {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin-top: 20px;
+                width: 100%;
+                max-width: 420px;
+            }
+
+            .case-columns {
+                --case-left-col: 1fr;
+                --case-right-col: 1fr;
+                grid-template-columns: 1fr;
+            }
+
+            .case-columns .case-col:first-child {
+                border-right: 0;
+                padding-right: 0;
+                padding-bottom: 16px;
+                border-bottom: 1px solid #e4e7f5;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 20px; }
+            section { padding: 48px 0; }
+            .hero-visual { order: 2; margin-top: 24px; }
+            .how-steps,
+            .bonuses-grid,
+            .pricing-grid,
+            .testimonials-grid,
+            .audience-grid,
+            .problem-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .problem-slap-inner { padding: 32px 24px; }
+            .testimonial-card-large { padding: 32px; }
+            .testimonial-text { font-size: 18px; }
+
+            .case-study-card { padding: 24px; }
+            .case-title { font-size: clamp(1.6rem, 6vw, 2.2rem); }
+            .case-subtitle { margin-bottom: 6px; }
+            .case-quote { padding: 16px 18px; }
+            .case-quote p,
+            .case-quote .case-client { padding-left: 22px; padding-right: 22px; }
+            .case-side { max-width: 100%; }
+
+            .case-problem {
+                --problem-width: 100%;
+            }
+
+            .case-header {
+                gap: 10px;
+                margin-bottom: 14px;
+                padding-bottom: 14px;
+            }
+        }
+
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px) scale(0.985);
+            transition-property: opacity, transform;
+            transition-duration: 600ms;
+            transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .reveal.fade-right { transform: translateX(28px) scale(0.985); }
+        .reveal.fade-left { transform: translateX(-28px) scale(0.985); }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .stagger-1 { transition-delay: 80ms; }
+        .stagger-2 { transition-delay: 140ms; }
+        .stagger-3 { transition-delay: 200ms; }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+</style>
+<base target="_blank">
+</head>
+<body>
+
+    
+    <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="container">
+            <div class="hero-layout">
+                <div class="hero-content reveal fade-left">
+                    <div class="hero-badge">Now Accepting New Clients</div>
+                    <h1>Your Cold Emails Are Dying in <span>Spam</span>. We Put Them Back Into Inbox.</h1>
+                    <p class="hero-subtitle">Most outbound tools help you send emails. InboxSetup makes sure they actually get delivered — at scale, safely, and predictably.</p>
+
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Fix inbox placement before it kills your revenue
+                        </div>
+                        <div class="hero-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Protect domains from bans & reputation death
+                        </div>
+                        <div class="hero-feature">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                            Scale cold email without deliverability collapse
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="#contact" class="btn btn-primary">Start Inbox Setup in 24 Hours</a>
+                        <a href="#features" class="btn btn-ghost">See How It Works</a>
+                    </div>
+
+                    
+                    <p class="hero-microcopy">Build starts within 24h • Inbox-safe sending ready in ~10 days</p>
+
+                    <div class="hero-trust">
+                        <div class="hero-trust-avatars">
+                            <img src="https://i.pravatar.cc/100?img=1" alt="">
+                            <img src="https://i.pravatar.cc/100?img=2" alt="">
+                            <img src="https://i.pravatar.cc/100?img=3" alt="">
+                            <img src="https://i.pravatar.cc/100?img=4" alt="">
+                        </div>
+                        <span>Trusted by 500+ teams sending 1M-10M+ emails daily</span>
+                    </div>
+                </div>
+
+                <div class="hero-visual reveal fade-right">
+                    <div class="hero-dashboard">
+                        <div class="dashboard-header">
+                            <div class="dashboard-dot red"></div>
+                            <div class="dashboard-dot yellow"></div>
+                            <div class="dashboard-dot green"></div>
+                        </div>
+                        <div class="dashboard-stats">
+                            <div class="stat-card">
+                                <div class="stat-card-label">Inbox Rate</div>
+                                <div class="stat-card-value up">97.3%</div>
+                                <div class="stat-card-change">↑ 23% this week</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-card-label">Open Rate</div>
+                                <div class="stat-card-value up">48.2%</div>
+                                <div class="stat-card-change">↑ 12% this week</div>
+                            </div>
+                        </div>
+                        <div class="dashboard-chart">
+                            <div class="chart-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="logo-marquee reveal">
+        <div class="container">
+            <p class="marquee-header">Powering Email Delivery For</p>
+        </div>
+        <div class="marquee-track">
+            <div class="marquee-item">Lead Generation & Outbound Agencies</div>
+            <div class="marquee-item">Financial Services & Lending Companies</div>
+            <div class="marquee-item">Affiliate Marketers</div>
+            <div class="marquee-item">B2B SaaS</div>
+            <div class="marquee-item">In-house Sales Teams</div>
+            <div class="marquee-item">Founders & Solopreneurs</div>
+            <div class="marquee-item">Lead Generation & Outbound Agencies</div>
+            <div class="marquee-item">Financial Services & Lending Companies</div>
+            <div class="marquee-item">Affiliate Marketers</div>
+            <div class="marquee-item">B2B SaaS</div>
+            <div class="marquee-item">In-house Sales Teams</div>
+            <div class="marquee-item">Founders & Solopreneurs</div>
+        </div>
+    </section>
+
+    
+    <section class="dashboard-showcase reveal" id="about">
+        <div class="container">
+            <div class="showcase-wrap">
+                <img class="showcase-main" src="https://inboxsetups.com/wp-content/uploads/2024/07/Group-1000009552-1.png" alt="Email Marketing Platform Dashboard">
+                <img class="showcase-overlay" src="https://inboxsetups.com/wp-content/uploads/2024/07/Group-1000009557-1.png" alt="Client Testimonial">
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="stats-section reveal">
+        <div class="container">
+            <div class="stats-headline">
+                <h2><strong>InboxSetups™</strong> Are Scalable Email Systems<br>That Can Inbox <strong>100k-10M+</strong> Emails Daily</h2>
+            </div>
+            <div class="stats-badges">
+                <div class="stats-badge">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                    90-100% Inbox Placement
+                </div>
+                <div class="stats-badge">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    40-60%+ Open Rates
+                </div>
+                <div class="stats-badge">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    Cold & Warm Email
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="problem-section reveal">
+        <div class="container">
+            <div class="section-tag">The Problem</div>
+            <h2>If This Looks Familiar — You're Already Losing Money</h2>
+            <p>Truth: Your copy isn't the problem. Your deliverability is. Every email that hits spam = lost lead + burned domain + wasted time + false analytics</p>
+
+            <div class="problem-grid">
+                <div class="problem-card reveal">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7"/><path d="M3 7l9 6 9-6"/></svg>
+                    </div>
+                    <h3>Emails sent — no replies</h3>
+                    <p>Tools say "sent", inbox says "spam". Your emails never reach the inbox. They get filtered to spam, promotions, or blocked entirely. All that effort, wasted.</p>
+                </div>
+                <div class="problem-card reveal stagger-1">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                    </div>
+                    <h3>Domains warming for weeks, then dying overnight</h3>
+                    <p>One bad setup, and your domain reputation is destroyed. Weeks of warmup, gone overnight. Start from scratch.</p>
+                </div>
+                <div class="problem-card reveal stagger-2">
+                    <div class="problem-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+                    </div>
+                    <h3>Scaling Breaks Everything</h3>
+                    <p>What works at 50 emails/day collapses at 500/day, or at 5000/day. Without proper infrastructure, scaling kills your deliverability.</p>
+                </div>
+            </div>
+
+            <div class="problem-slap-inner reveal">
+                <div class="problem-flow">Sent → Spam → Lost Revenue</div>
+                <p class="problem-truth">If this is happening, switching tools won't fix it.</p>
+                <p class="problem-cost">You need a game-changer, an InboxSetup Infrastructure.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="features" class="features reveal">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">The Solution</div>
+                <h2>How InboxSetup Gets You Out of Spam</h2>
+            </div>
+            <div class="features-images">
+                <img class="how-img-platform" src="https://inboxsetups.com/wp-content/uploads/2024/07/Group-1000009595-1.png" alt="Powerful Email Platform">
+                <img class="how-img-ai" src="https://inboxsetups.com/wp-content/uploads/2024/07/Group-1000009582-2.png" alt="AI Core">
+                <img class="how-img-infra" src="https://inboxsetups.com/wp-content/uploads/2024/07/Group-12611532101.png" alt="Sending Infrastructure">
+                <img class="how-img-inbox" src="https://inboxsetups.com/wp-content/uploads/2024/07/Group-1000009583-1.png" alt="Inbox of Recipients">
+            </div>
+            <div class="how-steps">
+                <div class="how-step-card">
+                    <span class="how-step-label">Step 1</span>
+                    <h3>Infrastructure Built for Inbox</h3>
+                    <ul>
+                        <li>Dedicated domains &amp; mailboxes</li>
+                        <li>Correct DNS: SPF, DKIM, DMARC</li>
+                        <li>Clean setup with minimal footprint</li>
+                    </ul>
+                </div>
+                <div class="how-step-card">
+                    <span class="how-step-label">Step 2</span>
+                    <h3>Smart Warmup &amp; Reputation Control</h3>
+                    <ul>
+                        <li>Human-like sending patterns</li>
+                        <li>Gradual trust building</li>
+                        <li>Continuous monitoring &amp; health signals</li>
+                    </ul>
+                </div>
+                <div class="how-step-card">
+                    <span class="how-step-label">Step 3</span>
+                    <h3>Safe Scaling Without Domain Death</h3>
+                    <ul>
+                        <li>Add volume without collapsing reputation</li>
+                        <li>Rotate &amp; isolate risk properly</li>
+                        <li>One dashboard, full control</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="how-timeline">
+                <div>Day 0–1 → Infrastructure &amp; domains</div>
+                <div>Day 1–10 → Warmup &amp; reputation building</div>
+                <div>Day 10+ → Safe outbound at scale</div>
+            </div>
+            <p class="how-proof">This is how you avoid bans and burned domains.</p>
+            <p class="how-closing">You don't guess. You see exactly what's happening.</p>
+        </div>
+    </section>
+
+    <section class="case-study-section reveal">
+        <div class="container">
+            <div class="case-study-card">
+                <div class="case-header">
+                    <div class="case-header-main">
+                        <span class="case-pill">Case Study</span>
+                        <h3 class="case-title">Stable Inbox Placement in a High-Risk Finance Niche</h3>
+                        <p class="case-subtitle">When standard email setups fail.</p>
+                    </div>
+                    <aside class="case-side">
+                        <h4>Industry Snapshot</h4>
+                        <ul>
+                            <li>
+                                <span class="icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <rect x="3" y="6" width="18" height="14" rx="3" fill="#7C7FF2"></rect>
+                                        <rect x="7" y="3" width="10" height="4" rx="2" fill="#5C62D8"></rect>
+                                        <rect x="10.5" y="11" width="3" height="3" rx="1.2" fill="#ffffff"></rect>
+                                    </svg>
+                                </span>
+                                Industry: Finance / Lending
+                            </li>
+                            <li>
+                                <span class="icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M4 12L20 4L13 20L11.5 13.5L4 12Z" fill="#7C7FF2"></path>
+                                    </svg>
+                                </span>
+                                Outbound Type: Cold email
+                            </li>
+                            <li>
+                                <span class="icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <path d="M12 3L22 20H2L12 3Z" fill="#F4A53A"></path>
+                                        <rect x="11" y="9" width="2" height="6" rx="1" fill="#ffffff"></rect>
+                                        <rect x="11" y="16.5" width="2" height="2" rx="1" fill="#ffffff"></rect>
+                                    </svg>
+                                </span>
+                                Risk Level: High
+                            </li>
+                            <li>
+                                <span class="icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none">
+                                        <rect x="3" y="6" width="18" height="12" rx="3" fill="#5DBB6B"></rect>
+                                        <path d="M5 8.5L12 13.5L19 8.5" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </span>
+                                Sending Volume: High-volume outbound
+                            </li>
+                        </ul>
+                        <div class="case-divider"></div>
+                        <h4>Key Outcome</h4>
+                        <ul class="case-outcome">
+                            <li>Stable inbox placement</li>
+                            <li>Predictable outbound</li>
+                            <li>No domain burn</li>
+                        </ul>
+                    </aside>
+                </div>
+
+                <div class="case-body">
+                    <div class="case-columns">
+                        <div class="case-col">
+                            <div class="case-block">
+                                <h4>Context</h4>
+                                <p>The client operates in a finance-related niche where <strong>inbox placement is extremely difficult</strong> due to strict spam filtering and compliance scrutiny.</p>
+
+                                <div class="case-spacer"></div>
+
+                                <h4>Why Standard Solutions Failed</h4>
+                                <p>Traditional tools and "best practices" didn't work.</p>
+                                <ul class="case-list">
+                                    <li><strong>Fast warmups</strong> and generic setups</li>
+                                    <li><strong>Proper DNS</strong> and authentication</li>
+                                    <li><strong>Controlled</strong> warmup</li>
+                                    <li><strong>Sudden</strong> inbox drops</li>
+                                    <li><strong>Constant</strong> resets</li>
+                                </ul>
+                                <p>In this niche, <strong>mistakes</strong> are punished <strong>immediately.</strong></p>
+                            </div>
+                        </div>
+                        <div class="case-col">
+                            <div class="case-block case-problem">
+                                <h4>The Problem</h4>
+                                <ul class="case-problem-list">
+                                    <li>Outbound emails were <strong>landing inconsistently</strong> in inbox <strong>and spam.</strong></li>
+                                    <li>Any attempt to scale resulted in <strong>reputation damage</strong> and forced rebuilds.</li>
+                                    <li>Outbound growth wasn't limited by <strong>demand</strong> -- it was limited by deliverability risk.</li>
+                                </ul>
+                            </div>
+                            <p class="case-problem-note">In this niche, mistakes are punished <strong>immediately.</strong></p>
+                            <div class="case-quote">
+                                <p><strong>InboxSetup</strong> delivered an enterprise-level email system that actually works in a <strong>difficult environment</strong>. We finally stopped guessing and started scaling with <strong>confidence</strong>.</p>
+                                <div class="case-client">Verified Client - Financial Services</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="timeline-section reveal">
+        <div class="container">
+            <div class="timeline-header">
+                <h2>Your Path to Inbox-Ready</h2>
+                <p>Fast to start. Safe to scale. Here's exactly what happens.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-step reveal">
+                    <div class="timeline-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="4" width="18" height="18" rx="3"></rect>
+                            <line x1="8" y1="2.5" x2="8" y2="6"></line>
+                            <line x1="16" y1="2.5" x2="16" y2="6"></line>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                        </svg>
+                    </div>
+                    <span class="timeline-duration">Day 0-1</span>
+                    <h3>Infrastructure & Domains</h3>
+                    <p>We build your dedicated infrastructure, configure domains, DNS & authentication.</p>
+                </div>
+                <div class="timeline-step reveal stagger-1">
+                    <div class="timeline-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <polygon points="12 2.5 15 9 22 9 16.5 13 18.5 20.5 12 16.5 5.5 20.5 7.5 13 2 9 9 9 12 2.5"></polygon>
+                        </svg>
+                    </div>
+                    <span class="timeline-duration">Day 1-10</span>
+                    <h3>Warmup & Reputation</h3>
+                    <p>Gradual trust building with human-like patterns. Continuous monitoring.</p>
+                </div>
+                <div class="timeline-step reveal stagger-2">
+                    <div class="timeline-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <polyline points="13 2 4 14 11 14 9 22 20 9 13 9 13 2"></polyline>
+                        </svg>
+                    </div>
+                    <span class="timeline-duration">Day 10+</span>
+                    <h3>Safe Outbound at Scale</h3>
+                    <p>Inbox-safe sending with full visibility. This is how you avoid bans.</p>
+                </div>
+            </div>
+
+            <p class="timeline-disclaimer">Anyone promising instant inbox placement is trading short-term speed for long-term damage.</p>
+        </div>
+    </section>
+
+    
+    <section class="what-you-get reveal" id="specials">
+        <div class="container">
+            <h2>What You Actually Get</h2>
+            <ul class="value-list">
+                <li>Emails that land in inbox (not promotions/spam)</li>
+                <li>Predictable outbound instead of random luck</li>
+                <li>Domains that live for months, not days</li>
+                <li>Confidence to scale without fear</li>
+            </ul>
+            <div class="value-punch">
+                InboxSetup doesn't promise "better open rates". It removes the reason you don't have them.
+            </div>
+        </div>
+    </section>
+
+
+    
+    <section class="bonuses-section reveal" id="bonuses">
+        <div class="container">
+            <div class="bonuses-header">
+                <h2>Included at No Extra Cost</h2>
+                <p>Everything you need for bulletproof email deliverability</p>
+            </div>
+
+            <div class="bonuses-grid">
+                <div class="bonus-card reveal">
+                    <span class="bonus-label">Bonus #1</span>
+                    <h3>Domain Protection Logic</h3>
+                    <ul class="bonus-list">
+                        <li>Prevent chain bans & reputation bleed</li>
+                        <li>Keep risky campaigns isolated</li>
+                    </ul>
+                </div>
+                <div class="bonus-card reveal stagger-1">
+                    <span class="bonus-label">Bonus #2</span>
+                    <h3>Inbox Health Dashboard</h3>
+                    <ul class="bonus-list">
+                        <li>See deliverability risks before Gmail punishes you</li>
+                        <li>Visibility instead of guessing</li>
+                    </ul>
+                </div>
+                <div class="bonus-card reveal stagger-2">
+                    <span class="bonus-label">Bonus #3</span>
+                    <h3>Ready-to-Scale Setup</h3>
+                    <ul class="bonus-list">
+                        <li>No rebuilding infrastructure every month</li>
+                        <li>Stable sending foundation</li>
+                    </ul>
+                </div>
+                <div class="bonus-card reveal stagger-3">
+                    <span class="bonus-label">Bonus #4</span>
+                    <h3>Best-Practice Architecture</h3>
+                    <ul class="bonus-list">
+                        <li>Built from what actually works in modern outbound</li>
+                        <li>Not theory, not hacks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="testimonial-section reveal">
+        <div class="container-narrow">
+            <div class="testimonial-card-large reveal">
+                <div class="testimonial-content">
+                    <div class="testimonial-rating">
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <p class="testimonial-text">"We were operating in a highly sensitive financial niche environment where inbox placement is extremely hard to maintain. </br>
+					InboxSetup delivered a complete, enterprise-level email infrastructure that finally allowed us to send at scale with confidence. </br>
+					It’s a system that actually works."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">KL</div>
+                        <div class="testimonial-info">
+                            <h4>Kieran Lambert</h4>
+                            <p>CEO, TechStart Inc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="comparison-section reveal">
+        <div class="container">
+            <div class="comparison-header">
+                <h2>InboxSetup vs All Other Tools</h2>
+            </div>
+
+            <table class="comparison-table reveal">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Regular Tools</th>
+                        <th>InboxSetup</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Inbox placement focus</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Domain protection</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Safe scaling</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Spam prevention (proactive)</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                    <tr>
+                        <td>Full visibility & monitoring</td>
+                        <td><span class="cross">✗</span></td>
+                        <td><span class="check">✓</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="comparison-footer">Others help you send emails. InboxSetup helps you survive inbox filters.</p>
+        </div>
+    </section>
+
+    
+    <section class="pricing-section reveal" id="pricing">
+        <div class="container">
+            <div class="pricing-header">
+                <h2>InboxSetups™ Versions & <span style="color: var(--primary);">Pricing</span></h2>
+                <p style="margin-top: 10px; color: var(--text-muted);">The InboxSetup system consists of two main parts</p>
+                <p style="margin-top: 8px; color: var(--text-muted);">Most tools optimize sending. We optimize landing.</p>
+            </div>
+
+            <div class="pricing-intro">
+                <div class="pricing-intro-item reveal">
+                    <h3>01</h3>
+                    <h4>The Email Platform/Dashboard to control the sending structure</h4>
+                    <p>This is an advanced email-sending platform with all the features Email service providers have. (Lists creation, Drip Campaigns, Segmentation, Behaviour Tracking etc.)</p>
+                </div>
+                <div class="pricing-intro-item reveal stagger-1">
+                    <h3>02</h3>
+                    <h4>The Multi-Server Email Sending Infrastructure that will deliver the emails</h4>
+                    <p>A sending structure can be built to send 10M emails per day. Or to send 100k emails per day.</p>
+                </div>
+            </div>
+
+            <div class="pricing-guarantee">
+                <h3>Zero-Risk Deliverability Guarantee</h3>
+                <p>If InboxSetup doesn't improve inbox placement, stabilize sending, and give full visibility, you don't continue. Period.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card reveal">
+                    <h3>Standard Version</h3>
+                    <div class="price">$4,990</div>
+                    <ul>
+                        <li>4 Sending Servers</li>
+                        <li>100.000 Emails/day</li>
+                        <li>3.000.000 Emails/month</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Build It</a>
+                </div>
+
+                <div class="pricing-card featured reveal stagger-1">
+                    <span class="popular-badge">Popular</span>
+                    <h3>Advanced Version</h3>
+                    <div class="price">$11,990</div>
+                    <ul>
+                        <li>12 Sending Servers</li>
+                        <li>300.000 Emails/day</li>
+                        <li>9.000.000 Emails/month</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="width: 100%;">Build It</a>
+                </div>
+
+                <div class="pricing-card reveal stagger-2">
+                    <h3>Professional Version</h3>
+                    <div class="price">$15,990</div>
+                    <ul>
+                        <li>20 Sending Servers</li>
+                        <li>500.000 Emails/day</li>
+                        <li>15.000.000 Emails/month</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Build It</a>
+                </div>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card reveal">
+                    <h3>Corporate Version</h3>
+                    <div class="price">$22,990</div>
+                    <ul>
+                        <li>40 Sending Servers</li>
+                        <li>1,000.000 Emails/day</li>
+                        <li>30.000.000 Emails/month</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Build It</a>
+                </div>
+
+                <div class="pricing-card reveal stagger-1">
+                    <h3>Enterprise Version</h3>
+                    <div class="price">Custom Pricing</div>
+                    <ul>
+                        <li>Custom Build</li>
+                        <li>5M+ Emails Per Day</li>
+                        <li>150M+ Emails Per Month</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-secondary" style="width: 100%;">Contact Us</a>
+                </div>
+
+                <div class="pricing-card pricing-info-bar reveal">
+                    <p><strong>The system build cost is a one-time investment.</strong></p><br>
+                    <p>The only monthly cost will be the servers hosting cost of <strong>$90-$300 per month</strong></p>
+                    <p><a href="#contact">Contact Us</a> for details.</p>
+                </div>
+            </div>
+
+            <div class="pricing-urgency">
+                <h3>⚠️ We Limit New Setups Per Month</h3>
+                <p>Deliverability doesn't scale infinitely. If setup slots are full — you wait, or you keep burning domains.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="real-cost reveal">
+        <div class="container">
+            <h2>The Real Cost Isn't InboxSetup</h2>
+            <p>It's dead domains, wasted warmups, broken pipelines, and teams blaming copy instead of infrastructure.</p>
+            <p><strong>InboxSetup costs less than one burned campaign and saves months of damage.</strong></p>
+        </div>
+    </section>
+
+    
+    <section class="testimonials-grid-section reveal" id="testimonials">
+        <div class="container">
+            <div class="testimonials-header">
+                <div class="stars">★★★★★</div>
+                <h2>Testimonials</h2>
+                <p>Verified By <span>Upwork</span></p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-result">Result: Enterprise-level self-hosted email system deployed</div>
+                    <div class="testimonial-card-header">
+                        <h4>Complex outbound setup, Scalable multi-domain infrastructure</h4>
+                        <div class="rating">
+                            <span class="stars">★★★★★</span> 5.00 | Actively inboxing since Sep 2023
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">"Before InboxSetup, our email infrastructure was fragmented and unreliable. We needed something enterprise-grade that could actually support growth. The system we got is stable, controlled, and built to last - exactly what we were missing."</p>
+                    <div class="testimonial-person">Advanced InboxSetup</div>
+                    <div class="testimonial-card-footer">Fixed Price: $11,990</div>
+                </div>
+
+                <div class="testimonial-card reveal stagger-1">
+                    <div class="testimonial-result">Result: Complete email infrastructure with full deliverability control</div>
+                    <div class="testimonial-card-header">
+                        <h4>Business-critical outbound, ongoing scalable sending</h4>
+                        <div class="rating">
+                            <span class="stars">★★★★★</span> 5.00 | Actively inboxing since Aug 2024
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">"We were looking for more than advice — we needed a working system. InboxSetup delivered a complete email infrastructure with proper setup, reputation control, and clear visibility. This removed a lot of uncertainty from our outbound."</p>
+                    <div class="testimonial-person">Standard InboxSetup</div>
+                    <div class="testimonial-card-footer">Fixed Price: $4,990</div>
+                </div>
+
+                <div class="testimonial-card reveal stagger-2">
+                    <div class="testimonial-result">Result: Powerful self-hosted system with full sending control</div>
+                    <div class="testimonial-card-header">
+                        <h4>Self-hosted outbound environment, medium–high volume sending</h4>
+                        <div class="rating">
+                            <span class="stars">★★★★★</span> 5.00 | Actively inboxing since Jan 2024
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">"InboxSetup delivered exactly what was promised: a powerful self-hosted email system that gave us full control over sending and reputation. It works reliably and does what other solutions failed to do."</p>
+                    <div class="testimonial-person">Advanced InboxSetup</div>
+                    <div class="testimonial-card-footer">Fixed Price: $11,990</div>
+                </div>
+
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-result">Result: Deliverability risks identified and Inbox placement fixed</div>
+                    <div class="testimonial-card-header">
+                        <h4>Existing outbound with inbox issues, growing outbound operation</h4>
+                        <div class="rating">
+                            <span class="stars">★★★★★</span> 5.00 | Actively inboxing since Dec 2025
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">"We came in with serious deliverability concerns and unclear next steps. InboxSetup helped us understand exactly what was broken, what was risky, and how to build a system that would actually survive inbox filters. This completely changed our approach."</p>
+                    <div class="testimonial-person">Advanced InboxSetup</div>
+                    <div class="testimonial-card-footer">Fixed Price: $11,990</div>
+                </div>
+
+                <div class="testimonial-card reveal stagger-1">
+                    <div class="testimonial-result">Result: Stable lead generation restored via cold email</div>
+                    <div class="testimonial-card-header">
+                        <h4>Lead generation via outbound, consistent daily sending</h4>
+                        <div class="rating">
+                            <span class="stars">★★★★★</span> 5.00 | Actively inboxing since June 2023
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">"Our lead generation was inconsistent because deliverability kept breaking. InboxSetup gave us a stable foundation for outbound that finally produces predictable results instead of constant surprises."</p>
+                    <div class="testimonial-person">Standard InboxSetup</div>
+                    <div class="testimonial-card-footer">Fixed Price: $4,990</div>
+                </div>
+
+                <div class="testimonial-card reveal stagger-2">
+                    <div class="testimonial-result">Result: Sending scaled to 1M/day without inbox collapse</div>
+                    <div class="testimonial-card-header">
+                        <h4>High-volume outbound ~1,000,000 emails/day</h4>
+                        <div class="rating">
+                            <span class="stars">★★★★★</span> 5.00 | Actively inboxing since Oct 2025
+                        </div>
+                    </div>
+                    <p class="testimonial-quote">"Scaling email used to mean risking bans and spam, especially at the volume we needed. InboxSetup allowed us to reach 1M+ emails per day sending volumes while keeping inbox placement stable. This system handles scale the right way."</p>
+                    <div class="testimonial-person">Corporate InboxSetup</div>
+                    <div class="testimonial-card-footer">Fixed Price, $22,990</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="final-cta reveal" id="contact">
+        <div class="container">
+            <div class="final-cta-content">
+                <div class="final-cta-left">
+                    <h2>Ready to Stop Guessing?</h2>
+                    <p class="final-cta-lead">Join 500+ teams who've transformed their email deliverability. Start your inbox setup within 24 hours — or get your money back.</p>
+                    <div class="final-cta-buttons">
+                        <a class="btn-social btn-whatsapp" href="https://api.whatsapp.com/send/?phone=%2B306988912995&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">
+                            <svg aria-hidden="true" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
+                            <span>Chat on Whatsapp</span>
+                        </a>
+                        <a class="btn-social btn-telegram" href="https://t.me/inboxsetups" target="_blank" rel="noopener">
+                            <svg aria-hidden="true" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"></path></svg>
+                            <span>Chat on Telegram</span>
+                        </a>
+                        <a class="btn-social btn-email" href="mailto:hello@inboxsetups.com">
+                            <svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm0 2v.2l8 5.2 8-5.2V8l-8 5-8-5z"></path></svg>
+                            <span>Email Us</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="final-cta-form-card">
+                    <h3 class="final-cta-form-title">Get a quick strategy call</h3>
+                    <form class="final-cta-form" action="#" method="post" id="final-cta-form">
+                        <div class="final-cta-form-row">
+                            <div class="final-cta-form-group">
+                                <label for="cta-name">Full name</label>
+                                <input type="text" id="cta-name" name="name" placeholder="Your name" autocomplete="name" required>
+                            </div>
+                            <div class="final-cta-form-group">
+                                <label for="cta-email">Email</label>
+                                <input type="email" id="cta-email" name="email" placeholder="you@company.com" autocomplete="email" required>
+                            </div>
+                        </div>
+                        <div class="final-cta-form-group">
+                            <label for="cta-phone">Phone number</label>
+                            <input type="tel" id="cta-phone" name="phone" placeholder="+1 (555) 000-0000" autocomplete="tel">
+                        </div>
+                        <div class="final-cta-form-group">
+                            <label for="cta-message">Message</label>
+                            <textarea id="cta-message" name="message" placeholder="What do you want to improve first?"></textarea>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Book my strategy call</button>
+                        <p class="final-cta-form-note">We reply within one business day.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="audience-section reveal">
+        <div class="container">
+            <div class="audience-grid">
+                <div class="audience-card reveal">
+                    <h2>Who This Is NOT For</h2>
+                    <ul>
+                        <li>❌ "Just testing cold email"</li>
+                        <li>❌ Sending 100 emails/month</li>
+                        <li>❌ Looking for hacks & shortcuts</li>
+                    </ul>
+                </div>
+                <div class="audience-card reveal stagger-1">
+                    <h2>Who This IS For</h2>
+                    <ul>
+                        <li>✅ Agencies</li>
+                        <li>✅ Sales teams</li>
+                        <li>✅ Founders doing outbound seriously</li>
+                        <li>✅ Anyone sending thousands+ emails/month</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="faq-section reveal" id="QA">
+        <div class="container">
+            <div class="section-header">
+                <h2>People Also Ask</h2>
+                <p>Everything you need to know about InboxSetup.</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item active">
+                    <button class="faq-question">
+                        How fast does InboxSetup start working?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Short answer:</strong> immediately.<br><strong>Correct answer:</strong> safely.</p>
+                        <p>We start building your setup <strong>within 24 hours</strong> of onboarding. Inbox-safe sending is typically ready in <strong>~10 days.</strong> This isn't delay ? it's trust building. That's what keeps your emails out of spam long-term.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Why does it take ~10 days to be inbox-ready?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Because inbox placement is based on <strong>reputation</strong>, not software. Gmail and Outlook don't trust new sending infrastructure instantly. They look for consistency, volume patterns, and engagement signals.</p>
+                        <p>Anyone promising "instant inbox" is lying ? and usually burns your domains right after. We build trust the right way, so your setup lasts for months, not days.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I send emails during the warmup period?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes ? but <strong>carefully and intentionally.</strong> During warmup, we start with low, safe volumes, monitor signals closely, and increase only when reputation allows it. Fast to start. Safe to scale.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What exactly does InboxSetup fix?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>InboxSetup fixes the <strong>foundation</strong>, not the symptoms. We handle inbox placement (primary vs spam/promotions), domain reputation protection, warmup & sending behavior, and scaling without deliverability collapse.</p>
+                        <p>If your emails don't land ? copy, tools, and sequences don't matter.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Does InboxSetup replace my sending tool?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Yes</strong> ? if you want a complete, out-of-the-box solution with its own infrastructure, dashboard, and built-in warmup.</p>
+                        <p><strong>No</strong> ? if you already have a sending stack you like. InboxSetup can integrate with tools like Instantly, Smartlead, Lemlist, Apollo, and custom SMTP setups, working under the hood to control domain reputation and inbox placement.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What happens if my domains get burned anyway?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>First: our system is designed to <strong>prevent chain damage.</strong> We isolate risk so one issue doesn't kill all domains or destroy your entire setup.</p>
+                        <p>Second: if deliverability doesn't improve or stabilize, <strong>you don't continue.</strong> No lock-ins. No excuses.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Who is InboxSetup actually for?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>InboxSetup is for teams who send <strong>thousands+ emails/month</strong>, rely on outbound for revenue, and can't afford burned domains or dead pipelines. Agencies, sales teams, founders doing outbound seriously.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Why do you limit new setups per month?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Because deliverability doesn't scale infinitely. Every setup requires controlled warmup, monitoring, and reputation management. If we overload the system, <strong>everyone loses inbox trust.</strong> We choose quality over volume.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What's the next step?
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Click "<strong>Start Inbox Setup in 24 Hours</strong>". We'll review your situation, start building immediately, and get you inbox-safe the right way.</p>
+                        <p>Fast to start. Safe to scale.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <script>
+
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('reveal');
+            observer.observe(section);
+        });
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            setTimeout(() => hero.classList.add('active'), 150);
+        }
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
